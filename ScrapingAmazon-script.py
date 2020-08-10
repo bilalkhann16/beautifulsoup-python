@@ -3,7 +3,7 @@ import requests
 from requests_html import HTMLSession
 import smtplib
 from smtplib import SMTP
-# create an HTML Session object
+
 def check_price():
     session = HTMLSession()
     resp = session.get("https://www.amazon.com/Bluetooth-Earphones-Headphones-Auto-Pair-Definition/dp/B07ZYFWBC6/ref=sr_1_2?dchild=1&keywords=qcy+t5&qid=1596538146&sr=8-2")
@@ -17,15 +17,13 @@ def check_price():
     print("Price:", floatprice)
     if (floatprice < 18):
         sendemail1()
-
-    
+        
 def sendemail1():
     try:
         server= smtplib.SMTP('smtp.gmail.com:587')
         server.ehlo()
         server.starttls()
         server.ehlo()
-
         server.login('from email here', 'App password here')   #Email address from which you want to send email
         subject="Price down alert"
         body="Test Check of price."
@@ -38,6 +36,5 @@ def sendemail1():
 
     print ('\nEmail sent success\n')
     server.quit()
-
 check_price()
 
