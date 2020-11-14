@@ -11,7 +11,7 @@ def sendemail1():
         server.starttls()
         server.ehlo()
         tdcdcefmrbstzjif
-        server.login('lalbikhan2014@gmail.com', 'tdcdcefmrbstzjif')   #Email address from which you want to send email
+        server.login('lalbikhan2014@gmail.com', 'App password here')   #Email address from which you want to send email
         subject="Tesla Price Alert"
         body="Tesla Stock Price just hit the targeted price. Thanks! "
         msg = f"Subject:{subject}\n\n{body}"
